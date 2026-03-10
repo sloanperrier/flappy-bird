@@ -95,6 +95,13 @@
                     pipes.splice(i, 1);
                     score++;
                 }
+
+                // Check for collision with pipes
+                if (pipe.x < bird.x + bird.width && pipe.x + pipeWidth > bird.x) {
+                    if (bird.y < pipe.top || bird.y + bird.height > pipe.bottom) {
+                        gameOver = true;
+                    }
+                }
             }
         }
 
